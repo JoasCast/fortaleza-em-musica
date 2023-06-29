@@ -1,0 +1,37 @@
+.contentFull{
+    display: flex;
+    height: 92vh;
+
+}
+
+.contentFull .pageSobreNos{
+    margin-top: 74px;
+    margin-left: 70px;
+}
+
+.contentFull .contentInfo{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.contentFull .titulo{
+    font-size: 200%;
+    margin: 20px;
+    color: #070149;
+}
+
+.contentFull .texto{
+    width: 500px;
+    height: auto;
+    margin: 20px;
+    font-size: 180%;
+    text-align: justify;
+}
+
+.contentFull .contentInfo .texto .img{
+    width: 300px;
+    height: auto;
+    margin: 20px 100px;
+}
+

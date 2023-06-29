@@ -1,0 +1,54 @@
+* {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.contentFull {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentFull .titulo{
+    font-size: 200%;
+    margin: 20px;
+    color: #070149;
+}
+
+.contentFull .contentSug{
+    margin-top: 74px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;  
+}
+
+.contentFull .contentSug .direcao{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentFull .contentSug .cadeadoImg {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentFull .contentSug .cadeadoImg .texto {
+    width: 400px;
+    margin: 10px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.contentFull .contentSug .botoes {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

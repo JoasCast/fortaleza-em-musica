@@ -1,0 +1,16 @@
+.pageHome{
+    position: relative;
+    
+}
+/* .contentMap{
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+} */
+
+.containerStyle {
+    width: 100%;
+    height: 92vh;
+    position: relative;
+    z-index: 0;
+};
