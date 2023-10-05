@@ -6,6 +6,25 @@
     border-radius: 50px;
     color: aliceblue;
     font-size: 40px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
+}
+
+
+@media (max-width: 450px){
+
+    .botaoClick{
+        background-image: linear-gradient( to right ,#07A1BD, #070149);
+        width: 200px;
+        height: 60px;
+        margin: 8px;
+        border-radius: 50px;
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
 }

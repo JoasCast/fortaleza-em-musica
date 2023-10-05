@@ -1,16 +1,16 @@
-.Sobre {
+.SobreLog{
     display: flex;
     flex-direction: column;
 }
 
-.contentSobreNos {
+.contentSobreNosLog{
     width: calc(100% - 70px);
     height: calc(100vh - 75px);
-    margin-top: 75px;
     margin-left: 70px;
+    margin-top: 75px;
 }
 
-.contentSobreNos .SobreNos {
+.contentSobreNosLog .SobreNos{
     width: 95%;
     height: 95%;
     padding: 20px;
@@ -19,31 +19,30 @@
     color: #070149;
 }
 
-.contentSobreNos .contentInfo {
+.contentSobreNosLog .contentInfo{
     width: 100%;
     display: flex;
     justify-content: center;
 
 }
 
-.contentSobreNos .texto {
-    width: 500px;
+.contentSobreNosLog .texto{
+    width: 500px;   
     height: 500px;
     margin: 20px;
     font-size: 180%;
     text-align: justify;
 }
 
-.contentSobreNos .contentInfo .texto .img {
+.contentSobreNosLog .contentInfo .texto .img{
     width: 300px;
     margin: 20px 100px;
 }
 
 
-
 @media (max-width: 450px) {
 
-    .contentSobreNos {
+    .contentSobreNosLog {
         width: 100%;
         height: calc(100vh - 75px);
         margin-left: 0;
@@ -52,7 +51,7 @@
         justify-content: center;
     }
 
-    .contentSobreNos .contentInfo {
+    .contentSobreNosLog .contentInfo {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -61,7 +60,7 @@
 
     }
 
-    .contentSobreNos .SobreNos {
+    .contentSobreNosLog .SobreNos {
         width: 90%;
         height: 95%;
         padding: 8px;
@@ -71,7 +70,7 @@
     }
     
 
-    .contentSobreNos .texto {
+    .contentSobreNosLog .texto {
         width: 90%;
         height: 100%;
         margin: 6px;
@@ -82,10 +81,11 @@
         align-items: center;
     }
 
-    .contentSobreNos .contentInfo .texto .img {
+    .contentSobreNosLog .contentInfo .texto .img {
         width: 100px;
         margin: 8px;
         margin-bottom: 100px;
     }
 
 }
+

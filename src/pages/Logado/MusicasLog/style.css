@@ -1,42 +1,48 @@
-.Musica{
+.MusicaLog{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.contentMusicas{
+.contentMusicasLog{
     width: calc(100% - 70px);
     height: calc(100% - 75px);
-    margin-top: 75px;
     margin-left: 70px;
+    margin-top: 75px;
 }
 
- .contentMusicas .contentFeed{
+.contentMusicasLog h1{
+    margin: 20px;
+    color: #070149;
+}
+
+ .contentMusicasLog .contentFeedLog{
+    width: calc(100% - 70);
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #070149;
 }
 
 
 
-.cardMusica{
-    width: 96%;
+.cardMusicaLog{
+    width: 94%;
     margin: 10px;
     padding: 20px;
     box-shadow: 5px 5px 10px black;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #070149;
 }
 
-.cardMusica .cardInfo {
+.cardMusicaLog .cardInfo {
     display: flex;
-    align-items: center;
 }
 
-.cardMusica .cardimage{
+.cardMusicaLog .cardimageLog{
     width: 90px;
     height: 90px;
     margin: 20px;
@@ -44,13 +50,13 @@
     background-color: #070149;
 }
 
-.cardMusica .cardLocation{
+.cardMusicaLog .cardLocation{
     display: flex;
     align-items: center;
     margin: 0;
 }
 
-.cardMusica #seta{
+.cardMusicaLog #setaLog{
     font-size: 40px;
     background-color: #FF9D43;
     border-radius: 20px;
@@ -62,19 +68,19 @@
 
 @media (max-width: 450px) {
     
-    .contentMusicas{
+    .contentMusicasLog{
         width: 100vw;
-        height: calc(100vh - 75px);
-        margin-top: 64px;
+        height: calc(100vh - 40px);
+        margin-top: 40px;
         margin-left: 0px;
     }
 
-    .contentMusicas h1{
+    .contentMusicasLog h1{
         padding: 8px 20px;
         color: #070149;
     }
     
-     .contentMusicas .contentFeed{
+     .contentMusicasLog .contentFeedLog{
         width: 100%;
         padding: 0;
         display: flex;
@@ -87,7 +93,7 @@
     
     
     
-    .cardMusica{
+    .cardMusicaLog{
         width: 90%;
         height: auto;
         margin: 10px;
@@ -100,13 +106,13 @@
         color: #070149;
     }
     
-    .cardMusica .cardInfo {
+    .cardMusicaLog .cardInfoLog {
         display: flex;
         font-size: 10px;
         font-weight: lighter;
     }
     
-    .cardMusica .cardimage{
+    .cardMusicaLog .cardimageLog{
         width: 50px;
         height: 50px;
         margin: 20px;
@@ -114,14 +120,14 @@
         background-color: #070149;
     }
     
-    .cardMusica .cardLocation{
+    .cardMusicaLog .cardLocationLog{
         font-size: 10px;
         display: flex;
         align-items: center;
         margin: 0;
     }
     
-    .cardMusica #seta{
+    .cardMusicaLog #setaLog{
         font-size: 30px;
         background-color: #FF9D43;
         border-radius: 20px;

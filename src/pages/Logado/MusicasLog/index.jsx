@@ -1,11 +1,11 @@
-import NavegadorLateral from "../../components/NavegadorLateral";
-import Navegador from "../../components/NavegadorSup";
-
 import { useNavigate } from "react-router-dom";
 
-import "./Styles.css"
+import NavegadorLog from "../../../components/NavegadorLog";
+import NavegadorLateralLog from "../../../components/navegadorLateralLog";
 
-function Musicas() {
+import './style.css'
+
+function MusicasLog() {
 
     const musicasLista = [
         {
@@ -46,15 +46,13 @@ function Musicas() {
         local={musica.local}
     />))
 
-
-
     return (
-        <div className="Musica" >
-            <Navegador />
-            <NavegadorLateral />
-            <div className="contentMusicas" >
-                    <h1> Músicas </h1>
-                <div className="contentFeed">
+        <div className="MusicaLog" >
+            <NavegadorLog />
+            <NavegadorLateralLog />
+            <div className="contentMusicasLog" >
+                <h1> Músicas </h1>
+                <div className="contentFeedLog">
                     {cards}
                 </div>
             </div>
@@ -63,24 +61,25 @@ function Musicas() {
     )
 }
 
-export default Musicas
+export default MusicasLog;
+
 
 function CardsMusica({ nome, artista, local }) {
 
     const navigate = useNavigate();
 
     const detalhe = () => {
-        navigate('/detalhe');
-    }; 
+        navigate('/detalheLog');
+    };
 
     return (
-        <div className="cardMusica">
-            <div className="cardInfo" >
-                <div className="cardimage"></div>
+        <div className="cardMusicaLog">
+            <div className="cardInfoLog" >
+                <div className="cardimageLog"></div>
                 <div>
                     <h3>{nome}</h3>
                     <h4>{artista}</h4>
-                    <p className="cardLocation" >
+                    <p className="cardLocationLog" >
                         <span class="material-icons-outlined">
                             location_on
                         </span>
@@ -88,7 +87,7 @@ function CardsMusica({ nome, artista, local }) {
                     </p>
                 </div>
             </div>
-            <button class="material-icons-outlined" id="seta" onClick={detalhe} >
+            <button class="material-icons-outlined" id="setaLog" onClick={detalhe} >
                 chevron_right
             </button>
         </div>

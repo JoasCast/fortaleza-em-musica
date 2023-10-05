@@ -1,21 +1,21 @@
-.SugerirTudo{
+.SugerirTudoLog{
     display: flex;
     flex-direction: column;
 }
 
-.Sugerir {
+.SugerirLog {
     width: calc(100% - 70px);
-    height: calc(100% - 75px);
+    height: calc(100% - 75);
     margin-left: 70px;
     margin-top: 75px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: #070149;
 }
 
-.Sugerir .contentSugerir{
+.SugerirLog .contentSugerirLog{
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -23,12 +23,14 @@
     flex-direction: column;  
 }
 
-.Sugerir .contentSugerir .direcao{
+.SugerirLog .contentSugerirLog .direcaoLog{
+    height: 80vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.Sugerir .contentSugerir .cadeadoImg {
+.SugerirLog .contentSugerirLog .cadeadoImgLog {
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -36,14 +38,14 @@
     justify-content: center;
 }
 
-.Sugerir .contentSugerir .cadeadoImg .texto {
+.SugerirLog .contentSugerirLog .cadeadoImgLog .texto {
     width: 400px;
     margin: 10px;
     font-size: 26px;
     text-align: center;
 }
 
-.Sugerir .contentSugerir .botoes {
+.SugerirLog .contentSugerirLog .botoesLog {
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -53,32 +55,32 @@
 
 @media (max-width: 450px) {
     
-    .Sugerir {
+    .SugerirLog {
         width: 100%;
-        height: calc(100vh - 140px);
-        margin-top: 64px;
+        height: calc(100vh - 40px);
+        margin-top: 0;
         margin-left: 0;
         margin-bottom: 60px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: centar;
         align-items: center;
         color: #070149;
     }
     
-    .Sugerir .contentSugerir{
+    .SugerirLog .contentSugerirLog{
         width: 100%;
         height: 100%;
-        padding: 0px 20px;
+        padding: 0px;
         display: flex;
         flex-direction: column; 
     }
 
-    .Sugerir .contentSugerir h1{
+    .SugerirLog .contentSugerirLog h1{
          padding-top: 8px;
     }
     
-    .Sugerir .contentSugerir .direcao{
+    .SugerirLog .contentSugerirLog .direcaoLog{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -86,8 +88,8 @@
         padding-bottom: 100px;
     }
     
-    .Sugerir .contentSugerir .cadeadoImg {
-        width: 200px;
+    .SugerirLog .contentSugerirLog .cadeadoImgLog {
+        width: 90%;
         margin: 30px;
         display: flex;
         flex-direction: column;
@@ -95,21 +97,22 @@
         justify-content: center;
     }
 
-    .Sugerir .contentSugerir .cadeadoImg img{
-        width: 150px;
+    .SugerirLog .contentSugerirLog .cadeadoImgLog img{
+        width: 90%;
     }
     
-    .Sugerir .contentSugerir .cadeadoImg .texto {
+    .SugerirLog .contentSugerirLog .cadeadoImgLog .texto {
         width: 400px;
         margin: 10px;
         font-size: 16px;
         text-align: center;
     }
     
-    .Sugerir .contentSugerir .botoes {
+    .SugerirLog .contentSugerirLog .botoesLog {
         margin: 4px;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     
 }

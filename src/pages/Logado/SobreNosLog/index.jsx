@@ -1,15 +1,18 @@
-import NavegadorLateral from "../../components/NavegadorLateral";
-import Navegador from "../../components/NavegadorSup";
+import NavegadorLog from "../../../components/NavegadorLog"
+import NavegadorLateralLog from "../../../components/navegadorLateralLog"
 
-import LogoEscura from "../../assets/img/logo escuro fortaleza em música.svg"
-import "./Styles.css"
+import logoEscura from "../../../assets/img/logo escuro fortaleza em música.svg"
 
-function SobreNos() {
-    return (
-        <div className="Sobre" >
-                <Navegador />
-                <NavegadorLateral />
-            <div className="contentSobreNos" >
+import "./style.css"
+
+function SobreNosLog() {
+    
+
+    return(
+        <div className="SobreLog" >
+                <NavegadorLog />
+                <NavegadorLateralLog />
+            <div className="contentSobreNosLog" >
                 <div className="SobreNos" >
                     <h1>Sobre Nós</h1>
                     <div className="contentInfo" >
@@ -19,15 +22,14 @@ function SobreNos() {
                             O projeto Fortaleza em Música é desenvolvido pelo Grupo de Imagem, Consumo e Experiência Urbana (GICEU), do Instituto de Cultura e Arte (ICA) da Universidade Federal do Ceará (UFC), com o apoio do Programa Institucional de Bolsas de Iniciação Científica (PIBIC/UFC).
                         </p>
                         <p className="texto" >Iniciou as pesquisas em 2018 com  as/os pesquisadoras/res Sílvia Helena Belmino, Fábio Marques, Robson Braga e Paulo Victor Barbosa de Sousa e com as/os colaboradoras/res Andrew Noronha, Joás Castelo Lima, Vitor Alves, Pedro Campos, André Muniz e Lethycia Mesquita.
-                            <br />
-                            <img className="img" src={LogoEscura} alt="logo Fortaleza em música" ></img>
+                            <img className="img" src={logoEscura} alt="logo Fortaleza em música" ></img>
                         </p>
 
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     )
 }
 
-export default SobreNos
+export default SobreNosLog

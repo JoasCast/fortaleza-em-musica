@@ -1,0 +1,57 @@
+.PesquisaLog{
+    display: flex;
+    flex-direction: column;
+}
+
+.PesquisaLog .pesquisaMusicaLog{
+    width: calc(100% - 70px);
+    margin-top: 75px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PesquisaLog .pesquisaMusicaLog input{
+    width: 95%;
+    height: 80px;
+    border: solid 2px #070149a1;
+    border-radius: 4px;
+
+    font-size: xx-large;
+    font-weight: bold;
+    color: #070149;
+}
+
+.PesquisaLog .pesquisaMusicaLog .feedResultado{
+    width: 90%;
+}
+
+
+
+@media (max-width: 450px) {
+    
+    .PesquisaLog .pesquisaMusicaLog{
+        width: 100%;
+        height: calc(100% - 80px);
+        margin-top: 80px;
+        margin-bottom: 70px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .PesquisaLog .pesquisaMusicaLog input{
+        height: 60px;
+        text-align: center;
+
+        font-size: medium;
+    }
+    
+    .PesquisaLog .pesquisaMusicaLog .feedResultado{
+        width: 90%;
+    }
+    
+}

@@ -1,0 +1,118 @@
+.detalheLog{
+    display: flex;
+    flex-direction: column;
+}
+
+.contentDetalheLog{
+    width: calc(100% - 70px);
+    margin-left: 70px;
+}
+
+.contentDetalheLog .youtube{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentDetalheLog .nome{
+    width: 100%;
+    margin-bottom: 0px;
+    color: #070149;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentDetalheLog .informa{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.contentDetalheLog .informa .material-icons-outlined{
+    color: #070149;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.contentDetalheLog .informa .titulos{
+    color: #070149;
+    font-size: x-large;
+    margin: 0;
+}
+
+.detalheLog .contentDetalheLog .hamburger{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 10px 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.566);
+}
+
+.detalheLog .contentDetalheLog .hamburger .conteudoTitulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.detalheLog .contentDetalheLog .hamburger .conteudoTitulos img{
+    width: 30%;
+    margin: 20px;
+}
+
+.detalheLog .contentDetalheLog .hamburger .conteudoTitulos p{
+    font-size: large;
+    font-weight: lighter;
+    padding-bottom: 10px;
+    column-count: 2;
+    column-gap:40px;
+    text-align: left;
+}
+
+.detalheLog .contentDetalheLog .hamburger .comentariosTitulos h3{
+    font-size: 15px;
+}
+
+
+@media (max-width: 450px) {
+    
+    .contentDetalheLog{
+        height: calc(100% - 80px);
+        margin-top: 80px;
+        margin-bottom: 80px;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .contentDetalheLog .youtube{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contentDetalheLog .nome{
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    .contentDetalheLog .informa .titulos{
+        font-size: large;
+    }
+    
+    .detalheLog .contentDetalheLog .hamburger .conteudoTitulos p{
+        font-size: medium;
+        column-count: 1;
+       
+    }
+
+    
+}

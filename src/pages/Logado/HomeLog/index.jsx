@@ -1,9 +1,9 @@
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
-import NavegadorLateral from "../../components/NavegadorLateral";
-import Navegador from "../../components/NavegadorSup";
+import NavegadorLog from "../../../components/NavegadorLog";
+import NavegadorLateralLog from "../../../components/navegadorLateralLog";
 
-import "./Styles.css"
+import './style.css'
 
 const center = {
     lat: -3.747951,
@@ -17,8 +17,7 @@ const restrictionBounds = {
     west: -38.694790
 };
 
-function Home() {
-
+function HomeLog() {
 
     const { isLoaded } = useJsApiLoader({
         id: '8d1b783a0f4ab6ab',
@@ -26,12 +25,12 @@ function Home() {
     })
 
     return isLoaded ? (
-        <div className="Home">
-            <Navegador />
-            <NavegadorLateral />
-            <div className="contentMap" id="Map">
+        <div className="HomeLog">
+            <NavegadorLog/>
+            <NavegadorLateralLog/>
+            <div className="contentMapLog">
                 <GoogleMap
-                    mapContainerClassName="containerStyle"
+                    mapContainerClassName="containerStyleLog"
                     center={center}
                     zoom={12}
                     options={{
@@ -44,6 +43,7 @@ function Home() {
                 </GoogleMap>
             </div>
         </div>
-    ) : <h1> Loading... </h1>
+    ): <h1> Loading... </h1>
 }
-export default Home;
+
+export default HomeLog;

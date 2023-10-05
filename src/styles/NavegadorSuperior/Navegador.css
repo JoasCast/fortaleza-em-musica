@@ -1,40 +1,39 @@
-* {
-    margin-top: 0;
-    margin-left: 0;
-}
+
 
 .content {
-    background-color: #07A1BD;
+    background-color: #07a1bd;
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
+    top: 0;
+    user-select: none;
     z-index: 1;
 }
 .content img{
     margin: 0 20px;
 }
-.content .pesquisaContent{
+.content .botoes{
     display: flex;
-    align-items: center;
     margin: 0 20px;
 }
-.content .pesquisaContent .pesquisa {
-    width: 400px;
-    height:20px;
-    background: rgba(255, 255, 255, 0.62);
-    border: 3px solid #FFFFFF;
-    border-radius: 22px;
-    margin: 10px;
-    margin: 0 10px;
+
+.content .botoes .pesquisaContent{
+    display: flex;
+    cursor: pointer;
 }
-.content .pesquisaContent .material-icons-outlined{
+
+.content .botoes .pesquisaContent .pesquisa {
+   color: white;
+   padding: 0px 5px;
+}
+.content .botoes .pesquisaContent .material-icons-outlined{
     color: #FFFFFF;
     font-size: 46px;
 }
-.content .pesquisaContent .botaoEntrar{
+.content .botoes .botaoEntrar{
     outline: none;
     border: none;
     background-color: #FF9D43;
@@ -43,5 +42,144 @@
     height: 48px;
     border-radius: 20px;
     font-size: large;
-    margin-left: 20px; 
+    font-weight: bold;
+    margin-left: 20px;
+    cursor: pointer;
 }
+
+.content .botoes .material-icons-outlined{
+    color: #FFFFFF;
+    font-size: 46px;
+    cursor: pointer;
+}
+
+.content .botoes .material-icons{
+    color: #FFFFFF;
+    font-size: 46px;
+    cursor: pointer;
+}
+
+.content .caixaConta{
+    position: absolute;
+    right: 0;
+    margin-top: 246px;
+    background-color: rgb(215, 214, 214);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.content .caixaConta .caixaContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.content .caixaConta .imgConta{
+    width: 50px;
+    height: 50px;
+    background-color: #070149;
+    border-radius: 30px;
+    
+}
+
+.content .caixaConta .caixaContent p{
+    margin: 0;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.content .caixaConta .caixaContent .botoes{
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: small;
+    border-top: solid 1px;
+}
+
+
+@media (max-width: 450px) {
+
+    .content {
+        background-color: #07a1bd;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        user-select: none;
+        z-index: 1;
+    }
+    .content img{
+        width: 150px;
+        margin: 0 20px;
+    }
+    .content .botoes{
+        display: flex;
+        margin: 0 20px;
+    }
+    
+    .content .botoes .pesquisaContent{
+        display: flex;
+        cursor: pointer;
+    }
+    .content .botoes .pesquisaContent h2{
+        display: none;
+    }
+    .content .botoes .pesquisaContent .material-icons-outlined{
+        color: #FFFFFF;
+        font-size: 46px;
+    }
+    .content .botoes .botaoEntrar{
+        outline: none;
+        border: none;
+        background-color: #FF9D43;
+        color: #FFFFFF;
+        width: 80px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: small;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+    
+    .content .caixaConta{
+        position: absolute;
+        right: 0;
+        margin-top: 246px;
+        background-color: rgb(215, 214, 214);
+        border-radius: 10px;
+        z-index: 1000;
+    }
+    
+    .content .caixaConta .caixaContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .content .caixaConta .imgConta{
+        width: 50px;
+        height: 50px;
+        background-color: #070149;
+        border-radius: 30px;
+        
+    }
+    
+    .content .caixaConta .caixaContent p{
+        margin: 0;
+        font-weight: 500;
+        margin: 5px;
+    }
+    
+    .content .caixaConta .caixaContent .botoes{
+        font-weight: bolder;
+        cursor: pointer;
+        font-size: small;
+        border-top: solid 1px;
+    }
+  }

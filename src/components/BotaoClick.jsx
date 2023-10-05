@@ -1,9 +1,9 @@
 import "../styles/Botoes/BotaoClick.css"
 
-function BotaoClick (){
+function Botao ({ titulo, funcao }) {
     return(
-        <button className="botaoClick" >Entrar</button>
+        <button className="botaoClick" onClick={funcao}>{titulo}</button>
     )
 }
 
-export default BotaoClick
+export default Botao

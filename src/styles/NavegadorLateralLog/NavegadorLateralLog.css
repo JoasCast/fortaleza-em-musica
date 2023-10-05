@@ -1,5 +1,9 @@
+*{
+    margin-top: 0;
+    margin-left: 0;
+}
 
-.contentLat {
+.contentLatLog{
     width: 50px;
     height: calc(100vh - 74px);
     padding: 0px 10px;
@@ -13,28 +17,25 @@
     top: 74px;
     z-index: 1;
 }
-
-.contentLat .material-icons-outlined {
+.contentLatLog .material-icons-outlined{
     font-size: 50px;
     padding: 10px 0px;
-    color: #070149;
+    color: #070149;    
     user-select: none;
 }
 
-.contentLat .material-icons {
+.contentLatLog .material-icons{
     font-size: 50px;
     padding: 10px 0px;
-    color: #070149;
+    color: #070149;    
     user-select: none;
 }
 
-.contentLat .iconeMobile{
-    display: none;
-}
+
 
 @media (max-width: 450px) {
     
-    .contentLat {
+    .contentLatLog {
         width: 100%;
         height: 75px;
         padding: 0px;
@@ -49,7 +50,7 @@
         z-index: 1;
     }
     
-    .contentLat .material-icons-outlined {
+    .contentLatLog .material-icons-outlined {
         font-size: 50px;
         padding: 10px 0px;
         color: #070149;
@@ -57,7 +58,7 @@
         margin: 0 20px;
     }
     
-    .contentLat .material-icons {
+    .contentLatLog .material-icons {
         font-size: 50px;
         padding: 10px 0px;
         color: #070149;
@@ -65,11 +66,11 @@
         margin: 0 20px;
     }
 
-    .contentLat .iconeMobile{
+    .contentLatLog .iconeMobile{
         display: none;
     }
 
-    .contentLat .icone{
+    .contentLatLog .icone{
         display: block;
     }
 }
