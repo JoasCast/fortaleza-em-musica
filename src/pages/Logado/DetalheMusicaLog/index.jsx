@@ -3,7 +3,7 @@ import { useState } from "react";
 import NavegadorLog from "../../../components/NavegadorLog";
 import NavegadorLateralLog from "../../../components/navegadorLateralLog";
 
-import Logo  from "../../../assets/img/logo escuro fortaleza em música.svg"
+import Logo from "../../../assets/img/logo escuro fortaleza em música.svg"
 import "./style.css"
 
 function DetalheMusicaLog() {
@@ -70,7 +70,7 @@ function DetalheMusicaLog() {
                     <div className="informa">
                         <h1 className="titulos">Letra</h1>
                         <div onClick={mostrarLetra}>
-                            {letra ? <span class="material-icons-outlined">expand_less</span> : <span class="material-icons-outlined">expand_more</span>}
+                            {letra ? <span className="material-icons-outlined">expand_less</span> : <span className="material-icons-outlined">expand_more</span>}
                         </div>
                     </div>
 
@@ -108,7 +108,7 @@ function DetalheMusicaLog() {
                     <div className="informa">
                         <h1 className="titulos">Local</h1>
                         <div onClick={mostrarLocal}>
-                            {local ? <span class="material-icons-outlined">expand_less</span> : <span class="material-icons-outlined">expand_more</span>}
+                            {local ? <span className="material-icons-outlined">expand_less</span> : <span className="material-icons-outlined">expand_more</span>}
                         </div>
                     </div>
 
@@ -171,7 +171,7 @@ function DetalheMusicaLog() {
                     <div className="informa">
                         <h1 className="titulos">Artista</h1>
                         <div onClick={mostrarArtista}>
-                            {artista ? <span class="material-icons-outlined">expand_less</span> : <span class="material-icons-outlined">expand_more</span>}
+                            {artista ? <span className="material-icons-outlined">expand_less</span> : <span className="material-icons-outlined">expand_more</span>}
                         </div>
                     </div>
 
@@ -234,7 +234,7 @@ function DetalheMusicaLog() {
                     <div className="informa">
                         <h1 className="titulos">Inspiração</h1>
                         <div onClick={mostrarinspiracao}>
-                            {inspiracao ? <span class="material-icons-outlined">expand_less</span> : <span class="material-icons-outlined">expand_more</span>}
+                            {inspiracao ? <span className="material-icons-outlined">expand_less</span> : <span className="material-icons-outlined">expand_more</span>}
                         </div>
                     </div>
 
@@ -297,7 +297,7 @@ function DetalheMusicaLog() {
                     <div className="informa">
                         <h1 className="titulos">Comentários</h1>
                         <div onClick={mostrarComentarios}>
-                            {comentarios ? <span class="material-icons-outlined">expand_less</span> : <span class="material-icons-outlined">expand_more</span>}
+                            {comentarios ? <span className="material-icons-outlined">expand_less</span> : <span className="material-icons-outlined">expand_more</span>}
                         </div>
                     </div>
 

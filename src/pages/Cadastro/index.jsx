@@ -11,7 +11,7 @@ function Cadastro() {
 
     const navigate = useNavigate()
 
-    const voltarBotao = ()=>{
+    const voltarBotao = () => {
         navigate('/login')
     }
 
@@ -21,7 +21,7 @@ function Cadastro() {
 
     return (
         <div className="cadastro" >
-            <button class="material-icons-outlined" onClick={voltarBotao}>
+            <button className="material-icons-outlined" onClick={voltarBotao}>
                 chevron_left
             </button>
             <div className="cadastroImg">
@@ -30,19 +30,19 @@ function Cadastro() {
             <div className="cadastroInputs">
                 <h1>Cadastro</h1>
                 <div className="colunas">
-                <Input titulo="Nome" estilo={'pequeno'} />
-                <Input titulo="Gênero" estilo={'pequeno'} />
-                <Input titulo="Estado" estilo={'pequeno'} />
-                <Input titulo="Sobrenome" estilo={'pequeno'} />
-                <Input titulo="Data de Nascimento" estilo={'pequeno'} tipo={'date'} />
-                <Input titulo="Cidade" estilo={'pequeno'} />
+                    <Input titulo="Nome" estilo={'pequeno'} />
+                    <Input titulo="Gênero" estilo={'pequeno'} />
+                    <Input titulo="Estado" estilo={'pequeno'} />
+                    <Input titulo="Sobrenome" estilo={'pequeno'} />
+                    <Input titulo="Data de Nascimento" estilo={'pequeno'} tipo={'date'} />
+                    <Input titulo="Cidade" estilo={'pequeno'} />
                 </div>
                 <Input titulo="Endereço" estilo={'grande'} />
                 <Input titulo="Email" estilo={'grande'} />
                 <Input titulo="Email" estilo={'grande'} />
                 <Input titulo="Senha" estilo={'grande'} />
                 <Input titulo="Confirmar Senha" estilo={'grande'} />
-                <Link to={'/login'}  className="possuir"> <p>já possui uma conta?</p> </Link>
+                <Link to={'/login'} className="possuir"> <p>já possui uma conta?</p> </Link>
                 <Botao titulo={"Cadastrar"} funcao={cadastrarBotao} />
             </div>
         </div>

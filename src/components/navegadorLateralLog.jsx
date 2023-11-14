@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 
 import '../styles/NavegadorLateralLog/NavegadorLateralLog.css'
 
-function NavegadorLateralLog(){
+function NavegadorLateralLog() {
 
     const location = useLocation();
 
@@ -34,7 +34,7 @@ function NavegadorLateralLog(){
         return 'material-icons-outlined';
     }
 
-    return(
+    return (
         <div className="contentLatLog" >
             <div>
                 <Link to={"/home"} >
@@ -50,7 +50,7 @@ function NavegadorLateralLog(){
                 </Link>
 
                 <Link to={"/sugerirLog"} >
-                    <span class="material-icons-outlined" >
+                    <span className="material-icons-outlined" >
                         {activeSugerir()}
                     </span>
                 </Link>

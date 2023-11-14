@@ -5,9 +5,9 @@ import NavegadorLog from "../../../components/NavegadorLog"
 import NavegadorLateralLog from "../../../components/navegadorLateralLog"
 
 import "./style.css"
- 
 
- function PesquisaMusicaLog (){
+
+function PesquisaMusicaLog() {
 
     const musicasLista = [
         {
@@ -63,7 +63,7 @@ import "./style.css"
         );
     });
 
-    return(
+    return (
         <div className="PesquisaLog" >
             <NavegadorLog />
             <NavegadorLateralLog />
@@ -78,14 +78,14 @@ import "./style.css"
                                     <h3>{musica.nome}</h3>
                                     <h4>{musica.artista}</h4>
                                     <p className="cardLocation" >
-                                        <span class="material-icons-outlined">
+                                        <span className="material-icons-outlined">
                                             location_on
                                         </span>
                                         {musica.local}
                                     </p>
                                 </div>
                             </div>
-                            <button class="material-icons-outlined" id="seta"  onClick={detalhe}>
+                            <button className="material-icons-outlined" id="seta" onClick={detalhe}>
                                 chevron_right
                             </button>
                         </div>
@@ -94,6 +94,6 @@ import "./style.css"
             </div>
         </div>
     )
- }
+}
 
- export default PesquisaMusicaLog
+export default PesquisaMusicaLog

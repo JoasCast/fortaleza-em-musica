@@ -19,7 +19,7 @@ function NavegadorLog() {
         setConta(!conta);
     };
 
-    const sair = ()=>{
+    const sair = () => {
         navigate("/iniciar")
     }
 
@@ -31,13 +31,13 @@ function NavegadorLog() {
             <div className="botoes">
                 <div className="pesquisaContent" onClick={pesquisa} >
                     <h2 className="pesquisa" >pesquisa</h2>
-                    <span class="material-icons-outlined">
+                    <span className="material-icons-outlined">
                         search
                     </span>
                 </div>
 
                 <div onClick={mostrarConta} >
-                    {conta ? <span class="material-icons">account_circle</span> : <span class="material-icons-outlined">account_circle</span>}
+                    {conta ? <span className="material-icons">account_circle</span> : <span className="material-icons-outlined">account_circle</span>}
                 </div>
                 {console.log(conta)}
             </div>
@@ -48,7 +48,7 @@ function NavegadorLog() {
                         <div className="imgConta" ></div>
                         <p>email@exemple.com</p>
                         <h3>Nome Completo</h3>
-                        
+
                         <div className="botoes">
                             <p>Sobre nós</p>
                             <p onClick={sair} >Sair da Conta</p>

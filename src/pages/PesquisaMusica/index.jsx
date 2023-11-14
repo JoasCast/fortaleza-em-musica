@@ -1,89 +1,80 @@
-import { useState } from "react";
+import { initializeApp } from "firebase/app";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+
+import { useEffect, useState } from "react";
+
 import NavegadorLateral from "../../components/NavegadorLateral"
 import Navegador from "../../components/NavegadorSup"
 
 import './style.css'
+
 import { useNavigate } from "react-router-dom";
 
-function PesquisaMusica() {
+const firebaseApp = initializeApp({
+    apiKey: "AIzaSyDncHQagbmeHubkIgLyPaUkJ1E1AmtCDNk",
+    authDomain: "fortalezaemmusica.firebaseapp.com",
+    projectId: "fortalezaemmusica",
+});
 
-    const musicasLista = [
-        {
-            nome: "A ponte e a Femme Bateau",
-            artista: "Calé Alencar",
-            local: "Ponte dos ingleses"
-        },
-        {
-            nome: "Água Grande",
-            artista: "Algusto Pontes / Ednaldo",
-            local: "Praia de Iracema"
-        },
-        {
-            nome: "Amigos Libertinos",
-            artista: "Gabriel Aragão",
-            local: "Praia de Iracema"
-        },
-        {
-            nome: "Artigo 26",
-            artista: "Ednaldo",
-            local: "Praça do Ferreira"
-        },
-        {
-            nome: "As Deusas de Iracema",
-            artista: "Dalwton Moura / Rodger Rogério",
-            local: "Estatua de Iracema"
-        },
-        {
-            nome: "Balada de Jack",
-            artista: "Mona Gadelha",
-            local: "Centro cultural Belchior"
-        }
-    ];
+function PesquisaMusica() {
+    
+    const [musicas, setMusicas] = useState([]);
+
+    const db = getFirestore(firebaseApp);
+    const musicaCollectionRef = collection(db, "Musicas");
+
+    useEffect(() => {
+        const getMusicas = async () => {
+            const data = await getDocs(musicaCollectionRef);
+            console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+            setMusicas(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        getMusicas();
+    }, []);
 
     const navigate = useNavigate();
 
-    const detalhe = () => {
-        navigate('/detalhe')
-    }
+    const detalhe = (id) => {
+        navigate(`/detalhe/${id}`)
+    };
 
     const [busca, setBusca] = useState('');
-
     const handleBusca = (event) => {
         setBusca(event.target.value);
     }
 
-    const resultado = musicasLista.filter((musica) => {
+    const resultado = musicas.filter((musica) => {
         const termo = busca.toLocaleLowerCase();
         return (
-            musica.nome.toLocaleLowerCase().includes(termo) ||
-            musica.artista.toLocaleLowerCase().includes(termo) ||
-            musica.local.toLocaleLowerCase().includes(termo)
+            musica?.nome?.toLocaleLowerCase()?.includes(termo) ||
+            musica?.artista?.toLocaleLowerCase()?.includes(termo) ||
+            musica?.local?.toLocaleLowerCase()?.includes(termo)
         );
     });
 
     return (
-        <div className="Pesquisa" >
+        <div className="Pesquisa">
             <Navegador />
             <NavegadorLateral />
             <div className="pesquisaMusica">
                 <input className="input" type="text" placeholder="pesquise por Bairro ou Música" value={busca} onChange={handleBusca} />
                 <div className="feedResultado">
-                    {resultado.map((musica, index) => (
-                        <div className="cardMusica">
+                    {resultado.map((musica) => (
+                        <div className="cardMusica" id={musica.id}>
                             <div className="cardInfo" >
                                 <div className="cardimage"></div>
-                                <div key={index} >
+                                <div >
                                     <h3>{musica.nome}</h3>
                                     <h4>{musica.artista}</h4>
                                     <p className="cardLocation" >
-                                        <span class="material-icons-outlined">
+                                        <span className="material-icons-outlined">
                                             location_on
                                         </span>
                                         {musica.local}
                                     </p>
                                 </div>
                             </div>
-                            <button class="material-icons-outlined" id="seta"  onClick={detalhe}>
+                            <button className="material-icons-outlined" id="seta"  onClick={() => detalhe(musica.id)}>
                                 chevron_right
                             </button>
                         </div>

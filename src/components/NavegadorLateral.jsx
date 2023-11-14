@@ -49,16 +49,16 @@ function NavegadorLateral() {
                 </Link>
 
                 <Link to={"/sugerir"} >
-                    <span class="material-icons-outlined" >
+                    <span className="material-icons-outlined" >
                         {activeSugerir()}
                     </span>
                 </Link>
-                
+
                 <Link to={"/sobreNos"} className="iconeMobile" >
-                <span class={activeNos()}>
-                    info
-                </span>
-            </Link>
+                    <span class={activeNos()}>
+                        info
+                    </span>
+                </Link>
 
             </div>
 

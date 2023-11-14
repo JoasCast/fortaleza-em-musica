@@ -80,14 +80,14 @@ function CardsMusica({ nome, artista, local }) {
                     <h3>{nome}</h3>
                     <h4>{artista}</h4>
                     <p className="cardLocationLog" >
-                        <span class="material-icons-outlined">
+                        <span className="material-icons-outlined">
                             location_on
                         </span>
                         {local}
                     </p>
                 </div>
             </div>
-            <button class="material-icons-outlined" id="setaLog" onClick={detalhe} >
+            <button className="material-icons-outlined" id="setaLog" onClick={detalhe} >
                 chevron_right
             </button>
         </div>

@@ -11,6 +11,12 @@
     margin-left: 70px;
 }
 
+.contentMusicas h1{
+    color: #070149;
+    margin: 20px;
+    
+}
+
  .contentMusicas .contentFeed{
     padding: 20px;
     display: flex;

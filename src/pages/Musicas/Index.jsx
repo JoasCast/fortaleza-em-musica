@@ -1,46 +1,31 @@
+import { collection, getDocs} from "firebase/firestore";
+
+import { useEffect, useState } from "react";
+
 import NavegadorLateral from "../../components/NavegadorLateral";
-import Navegador from "../../components/NavegadorSup";
-
-import { useNavigate } from "react-router-dom";
-
-import "./Styles.css"
+import Navegador from "../../components/NavegadorSup";  
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { FirebaseContext } from "../../context/FirebaseContext/FirebaseContext";
+import "./Styles.css";
 
 function Musicas() {
+    
+    const db = useContext(FirebaseContext);
+    const [musicas, setMusicas] = useState([]);
 
-    const musicasLista = [
-        {
-            nome: "A ponte e a Femme Bateau",
-            artista: "Calé Alencar",
-            local: "Ponte dos ingleses"
-        },
-        {
-            nome: "Água Grande",
-            artista: "Algusto Pontes / Ednaldo",
-            local: "Praia de Iracema"
-        },
-        {
-            nome: "Amigos Libertinos",
-            artista: "Gabriel Aragão",
-            local: "Praia de Iracema"
-        },
-        {
-            nome: "Artigo 26",
-            artista: "Ednaldo",
-            local: "Praça do Ferreira"
-        },
-        {
-            nome: "As Deusas de Iracema",
-            artista: "Dalwton Moura / Rodger Rogério",
-            local: "Estatua de Iracema"
-        },
-        {
-            nome: "Balada de Jack",
-            artista: "Mona Gadelha",
-            local: "Centro cultural Belchior"
-        }
-    ];
+    useEffect(() => {
+        const getMusicas = async () => {
+            const data = await getDocs(collection(db, "Musicas"));
+            setMusicas(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+            console.log(data.docs);
+        };
+        getMusicas();
+    }, [db]);
 
-    let cards = musicasLista.map((musica) => (<CardsMusica
+    let cards = musicas.map((musica) => (<CardsMusica
+        key={musica.id}
+        id={musica.id}
         nome={musica.nome}
         artista={musica.artista}
         local={musica.local}
@@ -53,7 +38,7 @@ function Musicas() {
             <Navegador />
             <NavegadorLateral />
             <div className="contentMusicas" >
-                    <h1> Músicas </h1>
+                <h1> Músicas </h1>
                 <div className="contentFeed">
                     {cards}
                 </div>
@@ -65,13 +50,14 @@ function Musicas() {
 
 export default Musicas
 
-function CardsMusica({ nome, artista, local }) {
+function CardsMusica({ id, nome, artista, local }) {
 
     const navigate = useNavigate();
 
-    const detalhe = () => {
-        navigate('/detalhe');
-    }; 
+    const detalhe = (id) => {
+
+        navigate(`/detalhe/${id}`)
+    };
 
     return (
         <div className="cardMusica">
@@ -81,14 +67,14 @@ function CardsMusica({ nome, artista, local }) {
                     <h3>{nome}</h3>
                     <h4>{artista}</h4>
                     <p className="cardLocation" >
-                        <span class="material-icons-outlined">
+                        <span className="material-icons-outlined">
                             location_on
                         </span>
                         {local}
                     </p>
                 </div>
             </div>
-            <button class="material-icons-outlined" id="seta" onClick={detalhe} >
+            <button className="material-icons-outlined" id="seta" onClick={() => detalhe(id)} >
                 chevron_right
             </button>
         </div>

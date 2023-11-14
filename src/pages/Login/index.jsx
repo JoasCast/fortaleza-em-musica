@@ -19,13 +19,13 @@ function Login() {
         navigate('/home');
     }
 
-    const CadastrarBotao = ()=>{
+    const CadastrarBotao = () => {
         navigate('/cadastro')
     }
 
     return (
         <div className="login">
-            <button class="material-icons-outlined" onClick={voltarBotao}>
+            <button className="material-icons-outlined" onClick={voltarBotao}>
                 chevron_left
             </button>
             <div className="loginImg">

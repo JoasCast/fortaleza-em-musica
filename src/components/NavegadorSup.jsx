@@ -24,7 +24,7 @@ function Navegador() {
             <div className="botoes">
                 <div className="pesquisaContent" onClick={pesquisar} >
                     <h2 className="pesquisa">pesquisa</h2>
-                    <span class="material-icons-outlined">
+                    <span className="material-icons-outlined">
                         search
                     </span>
                 </div>
