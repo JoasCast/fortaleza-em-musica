@@ -30,8 +30,8 @@ function SugerirLog() {
                         <div className="botoesLog" >
                             <Input titulo="Titulo da Música" estilo={'grande'} />
                             <Input titulo="Compositores e intérpletes" estilo={'grande'} />
-                            <Input titulo="Titulo da Música" estilo={'grande'} />
-                            <BotaoClick titulo={"Considerações e links"} funcao={sugerir} />
+                            <Input titulo="Considerações e links" estilo={'grande'} />
+                            <BotaoClick titulo={"Sugerir"} funcao={sugerir} />
                         </div>
                     </div>
                 </div>
