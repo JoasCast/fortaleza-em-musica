@@ -1,12 +1,14 @@
 import { collection, getDocs} from "firebase/firestore";
 
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import NavegadorLateral from "../../components/NavegadorLateral";
 import Navegador from "../../components/NavegadorSup";  
-import { useNavigate } from 'react-router-dom';
+
 import { useContext } from "react";
 import { FirebaseContext } from "../../context/FirebaseContext/FirebaseContext";
+
 import "./Styles.css";
 
 function Musicas() {

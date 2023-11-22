@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import NavegadorLog from "../../../components/NavegadorLog";
 import NavegadorLateralLog from "../../../components/navegadorLateralLog";
@@ -6,7 +6,43 @@ import NavegadorLateralLog from "../../../components/navegadorLateralLog";
 import Logo from "../../../assets/img/logo escuro fortaleza em música.svg"
 import "./style.css"
 
+import { useLocation } from "react-router-dom";
+import { useParams } from 'react-router-dom'
+
+import { getDoc, doc } from "firebase/firestore";
+
+import { useContext } from "react";
+import { FirebaseContext } from "../../../context/FirebaseContext/FirebaseContext";
+
 function DetalheMusicaLog() {
+
+    const [musica, setMusica] = useState([]);
+
+    const db = useContext(FirebaseContext);
+    const location = useLocation();
+
+    const [id2] = useState(useParams().id);
+
+    // const searchParams = new URLSearchParams(location.search);
+    // const id = searchParams.get('id');
+
+    useEffect(() => {
+        const getMusicas = async () => {
+            const music = await getDoc(doc(db, "Musicas", id2));
+
+            console.log(music.data());
+
+            if (music.exists()) {
+                setMusica(music.data());
+            } else {
+                setMusica(null);
+                return null;
+            }
+        };
+
+        getMusicas();
+    }, [db, id2]);
+
 
     const [letra, setLetra] = useState(false);
 
@@ -50,7 +86,7 @@ function DetalheMusicaLog() {
                     <iframe
                         width="80%"
                         height="500"
-                        src="https://www.youtube.com/embed/XG9rWPfn0gY"
+                        src={"https://www.youtube.com/embed/" + musica.youtube}
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -58,9 +94,9 @@ function DetalheMusicaLog() {
                     ></iframe>
 
                     <div className="nome">
-                        <h2>Musica: Lobsomen do Jangurussu</h2>
-                        <h3>Composição: Pedro Anderson</h3>
-                        <h5>Interpletação: Caixeiros Viajantes</h5>
+                        <h2>Musica: { musica.nome } </h2>
+                        <h3>Composição: { musica.artista } </h3>
+                        <h5>Interpretação: { musica.interprete } </h5>
                     </div>
 
                 </div>
@@ -75,29 +111,7 @@ function DetalheMusicaLog() {
                     </div>
 
                     <div className="conteudoTitulos">
-                        {letra && <p> Eu vou tirar uma história Lá do fundo do baú
-                            A cidade é Fortaleza O bairro é Jangurussu
-                            É no rumo de quem vai Lá pra Maracanaú
-                            Fortaleza toda sabe É ali que se joga o lixo
-                            Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                            O povo tá vendo um bicho
-                            É um bicho diferente
-                            Não é boi nem urubu
-                            Raposa também não é
-                            Nem cobra nem cururu
-                            O bicho é um lobisomem Terror do Jangurussu
-                            Há uns vinte anos atrás
-                            Quando ali só era mato
-                            Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                            E uma casa abandonada Toda cheia de buracos
-                            Ali não passava ônibus Só bicicleta ou carroça
-                            Para ter uma inundação Bastava uma chuva grossa
-                            Empurrado pela fome Vem o povo e se apossa
-                            Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                            Mas é sujo e perigoso
-                            Tem muito caco de vidro Prego, veneno e arame
-                            É um trabalho arriscado Só pra não morrer de fome
-                            E o perigo de morrer Na boca do lobisomem?
+                        {letra && <p> {musica.letra}
                         </p>}
                     </div>
                 </div>
@@ -113,55 +127,10 @@ function DetalheMusicaLog() {
                     </div>
 
                     <div className="conteudoTitulos">
-                        {local && <div>
+                    {local && <div>
                             <img src={Logo} alt="logo" />
-                            <p> Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
-                                Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
-                            </p>
+                            <h3>local: {musica.local}</h3>
+                            <p> {musica.notaLocal}</p>
                         </div>}
                     </div>
                 </div>
@@ -176,54 +145,10 @@ function DetalheMusicaLog() {
                     </div>
 
                     <div className="conteudoTitulos">
-                        {artista && <div>
+                    {artista && <div>
                             <img src={Logo} alt="logo" />
-                            <p> Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
-                                Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
+                            <h3>Artista: {musica.artista} </h3>
+                            <p> {musica.notaAutor}
                             </p>
                         </div>}
                     </div>
@@ -239,53 +164,8 @@ function DetalheMusicaLog() {
                     </div>
 
                     <div className="conteudoTitulos">
-                        {inspiracao && <div>
-                            <p> Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
-                                Eu vou tirar uma história Lá do fundo do baú
-                                A cidade é Fortaleza O bairro é Jangurussu
-                                É no rumo de quem vai Lá pra Maracanaú
-                                Fortaleza toda sabe É ali que se joga o lixo
-                                Mas de uns tempos pra cá Aumentou o reboliço Porque no Jangurussu
-                                O povo tá vendo um bicho
-                                É um bicho diferente
-                                Não é boi nem urubu
-                                Raposa também não é
-                                Nem cobra nem cururu
-                                O bicho é um lobisomem Terror do Jangurussu
-                                Há uns vinte anos atrás
-                                Quando ali só era mato
-                                Só tinha a rampa do lixo Uns quatro ou cinco barracos
-                                E uma casa abandonada Toda cheia de buracos
-                                Ali não passava ônibus Só bicicleta ou carroça
-                                Para ter uma inundação Bastava uma chuva grossa
-                                Empurrado pela fome Vem o povo e se apossa
-                                Veio gente do São Cristóvão Do João Paulo e do Barroso Boa Vista, Sumaré Mulher com filho e esposo O lixão dá o sustento
-                                Mas é sujo e perigoso
-                                Tem muito caco de vidro Prego, veneno e arame
-                                É um trabalho arriscado Só pra não morrer de fome
-                                E o perigo de morrer Na boca do lobisomem?
+                    {inspiracao && <div>
+                            <p> {musica.inspiracao}
                             </p>
                         </div>}
                     </div>

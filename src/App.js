@@ -24,35 +24,7 @@ import SobreNosLog from './pages/Logado/SobreNosLog';
 import SugerirLog from './pages/Logado/SugerirLog';
 import PesquisaMusicaLog from './pages/Logado/PesquisaMusicaLog';
 
-
-
-// const firebaseApp = initializeApp({
-//   apiKey: "AIzaSyDncHQagbmeHubkIgLyPaUkJ1E1AmtCDNk",
-//   authDomain: "fortalezaemmusica.firebaseapp.com",
-//   projectId: "fortalezaemmusica",
-//   // storageBucket: "fortalezaemmusica.appspot.com",
-//   // messagingSenderId: "32493750823",
-//   // appId: "1:32493750823:web:59de0aea8415d5388b9c02",
-//   // measurementId: "G-BGF8R7MQFD"
-// });
-
 function App() {
-
-  // const [nameMusica, setNameMusica] = useState("");
-  // const [AutorMusica, setAutorMusica] = useState("");
-  // const [Musica, setMusica] = useState([]);
-
-  // const db = getFirestore(firebaseApp);
-  // const musicaCollectionRef = collection(db, "Musicas");
-
-  // useEffect( () => {
-  //   const getMusicas = async () => {
-  //     const data = await getDocs(musicaCollectionRef);
-  //     console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   getMusicas();
-  // },[]) 
-
 
   return (
 
@@ -76,7 +48,7 @@ function App() {
         <Routes>
           <Route path='/home' element={<HomeLog/>} />
           <Route path='/musicasLog' element={<MusicasLog/>} />
-          <Route path='/detalheLog' element={<DetalheMusicaLog/>} />
+          <Route path='/detalheLog/:id' element={<DetalheMusicaLog/>} />
           <Route path='sobreNosLog' element={<SobreNosLog/>} />
           <Route path='/sugerirLog' element={<SugerirLog/>} />
           <Route path='/pesquisaLog' element={<PesquisaMusicaLog/>}/>

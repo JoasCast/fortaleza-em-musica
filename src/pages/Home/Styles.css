@@ -16,6 +16,10 @@
     height: 100%;
 }
 
+.Home .contentMap .containerStyle .marcador{
+    width: 50px;
+}
+
 @media (max-width: 450px) {
 
     .Home .contentMap {

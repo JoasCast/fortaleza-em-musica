@@ -51,6 +51,7 @@ function PesquisaMusica() {
             musica?.local?.toLocaleLowerCase()?.includes(termo)
         );
     });
+    console.log(musicas.youtube)
 
     return (
         <div className="Pesquisa">
